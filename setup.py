@@ -6,7 +6,7 @@
 Setup of RVT
 Author: Ankit Goyal
 """
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 requirements = [
     "numpy",
@@ -38,15 +38,15 @@ setup(
     keywords="robotics,computer vision",
     classifiers=[
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Natural Language :: English",
         "Topic :: Scientific/Engineering",
     ],
-    packages=['rvt'],
+    packages=["rvt"],
     install_requires=requirements,
     extras_require={
         "xformers": [
-            "xformers @ git+https://github.com/facebookresearch/xformers.git@main#egg=xformers",
+            "xformers @ git+https://github.com/facebookresearch/xformers.git@v0.0.19#egg=xformers",
         ]
     },
 )
