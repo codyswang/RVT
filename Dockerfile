@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1-labs
+
 FROM maniskill/base
 
 ENV NVIDIA_VISIBLE_DEVICES=all
@@ -20,14 +22,13 @@ RUN git clone --recurse-submodules https://github.com/codyswang/RVT.git
 
 WORKDIR /build/RVT
 
-# Installing with xformers requires access to the CUDA runtime, which is difficult to configure at the moment.
-# See https://github.com/moby/buildkit/issues/1436
-# Current solution is to enter the container post build and manually install packages
-
 # Install RVT
-# RUN pip install -e .
+RUN pip install ninja
+RUN --device=nvidia.com/gpu=all pip install -e .[xformers]
 
-# # Install dependencies
-# # RUN pip install -e rvt/libs/YARR && \
-# #     pip install -e rvt/libs/peract_colab && \
-# #     pip install -e rvt/libs/point-renderer
+# Install dependencies
+RUN --device=nvidia.com/gpu=all pip install -e rvt/libs/YARR && \
+    pip install -e rvt/libs/peract_colab && \
+    pip install -e rvt/libs/point-renderer
+
+RUN pip install triton==2.2.0 yacs
