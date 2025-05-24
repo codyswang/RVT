@@ -7,9 +7,3 @@
 [submodule "libs/YARR"]
 	path = rvt/libs/YARR
         url = https://github.com/NVlabs/YARR.git
-[submodule "libs/peract"]
-	path = rvt/libs/peract
-        url = https://github.com/NVlabs/peract.git
-[submodule "libs/peract_colab/peract_colab"]
-        path = rvt/libs/peract_colab/peract_colab
-        url = https://github.com/peract/peract_colab.git
