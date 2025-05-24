@@ -2,45 +2,32 @@
 #
 # Licensed under the NVIDIA Source Code License [see LICENSE for details].
 
-import os
-import time
-import tqdm
-import random
-import yaml
 import argparse
-
+import os
+import random
+import time
 from collections import defaultdict
 from contextlib import redirect_stdout
 
+import config as exp_cfg_mod
 import torch
-import torch.multiprocessing as mp
 import torch.distributed as dist
+import torch.multiprocessing as mp
+import tqdm
+import yaml
 from torch.nn.parallel import DistributedDataParallel as DDP
+
+import rvt.models.rvt_agent as rvt_agent
+import rvt.mvt.config as mvt_cfg_mod
+import rvt.utils.ddp_utils as ddp_utils
+from rvt.models.rvt_agent import print_eval_log, print_loss_log
+from rvt.mvt.mvt import MVT
+from rvt.utils.get_dataset import get_dataset
+from rvt.utils.peract_utils import CAMERAS, DATA_FOLDER, IMAGE_SIZE, SCENE_BOUNDS
+from rvt.utils.rvt_utils import TensorboardManager, get_num_feat, load_agent, short_name
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 os.environ["BITSANDBYTES_NOWELCOME"] = "1"
-
-import config as exp_cfg_mod
-import rvt.models.rvt_agent as rvt_agent
-import rvt.utils.ddp_utils as ddp_utils
-import rvt.mvt.config as mvt_cfg_mod
-
-from rvt.mvt.mvt import MVT
-from rvt.models.rvt_agent import print_eval_log, print_loss_log
-from rvt.utils.get_dataset import get_dataset
-from rvt.utils.rvt_utils import (
-    TensorboardManager,
-    short_name,
-    get_num_feat,
-    load_agent,
-    RLBENCH_TASKS,
-)
-from rvt.utils.peract_utils import (
-    CAMERAS,
-    SCENE_BOUNDS,
-    IMAGE_SIZE,
-    DATA_FOLDER,
-)
 
 
 # new train takes the dataset as input
@@ -106,7 +93,8 @@ def save_agent(agent, path, epoch):
 def get_tasks(exp_cfg):
     parsed_tasks = exp_cfg.tasks.split(",")
     if parsed_tasks[0] == "all":
-        tasks = RLBENCH_TASKS
+        # tasks = MANISKILL_TASKS
+        raise NotImplementedError
     else:
         tasks = parsed_tasks
     return tasks
