@@ -2,7 +2,7 @@ import logging
 from typing import List
 
 import numpy as np
-from rlbench.demo import Demo
+# from rlbench.demo import Demo
 
 
 def _is_stopped(demo, i, obs, stopped_buffer, delta=0.1):
