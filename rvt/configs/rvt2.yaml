@@ -1,5 +1,5 @@
 exp_id: rvt2
-tasks: all
+tasks: PickCube-v1
 bs: 24
 num_workers: 3
 epochs: 15
