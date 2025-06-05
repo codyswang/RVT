@@ -20,8 +20,8 @@ from peract_colab.rlbench.utils import get_stored_demo
 from yarr.utils.observation_type import ObservationElement
 from yarr.replay_buffer.replay_buffer import ReplayElement, ReplayBuffer
 from yarr.replay_buffer.uniform_replay_buffer import UniformReplayBuffer
-from rlbench.backend.observation import Observation
-from rlbench.demo import Demo
+#from rlbench.backend.observation import Observation
+#from rlbench.demo import Demo
 
 from rvt.utils.peract_utils import LOW_DIM_SIZE, IMAGE_SIZE, CAMERAS
 from rvt.libs.peract.helpers.demo_loading_utils import keypoint_discovery
@@ -159,8 +159,8 @@ def create_replay(
 
 # discretize translation, rotation, gripper open, and ignore collision actions
 def _get_action(
-    obs_tp1: Observation,
-    obs_tm1: Observation,
+    obs_tp1, # : Observation
+    obs_tm1, # : Observation
     rlbench_scene_bounds: List[float],  # metric 3D bounds of the scene
     voxel_sizes: List[int],
     rotation_resolution: int,
@@ -220,8 +220,8 @@ def _add_keypoints_to_replay(
     task_replay_storage_folder: str,
     episode_idx: int,
     sample_frame: int,
-    inital_obs: Observation,
-    demo: Demo,
+    inital_obs, # : Observation
+    demo, # : Demo
     episode_keypoints: List[int],
     cameras: List[str],
     rlbench_scene_bounds: List[float],
