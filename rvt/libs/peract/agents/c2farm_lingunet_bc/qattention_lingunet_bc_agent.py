@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import transforms
-from pytorch3d import transforms as torch3d_tf
+#from pytorch3d import transforms as torch3d_tf
 from yarr.agents.agent import Agent, ActResult, ScalarSummary, \
     HistogramSummary, ImageSummary, Summary
 

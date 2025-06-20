@@ -20,7 +20,7 @@ from torch.nn.parallel import DistributedDataParallel as DDP
 import rvt.models.rvt_agent as rvt_agent
 import rvt.mvt.config as mvt_cfg_mod
 import rvt.utils.ddp_utils as ddp_utils
-from rvt.models.rvt_agent import print_eval_log, print_loss_log
+# from rvt.models.rvt_agent import print_eval_log, print_loss_log
 from rvt.mvt.mvt import MVT
 from rvt.utils.get_dataset import get_dataset
 from rvt.utils.peract_utils import CAMERAS, DATA_FOLDER, IMAGE_SIZE, SCENE_BOUNDS

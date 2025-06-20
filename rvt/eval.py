@@ -19,10 +19,10 @@ from copy import deepcopy
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 os.environ["BITSANDBYTES_NOWELCOME"] = "1"
 
-from rlbench.backend import task as rlbench_task
-from rlbench.backend.utils import task_file_to_task_class
-from rlbench.action_modes.gripper_action_modes import Discrete
-from rlbench.action_modes.action_mode import MoveArmThenGripper
+#from rlbench.backend import task as rlbench_task
+#from rlbench.backend.utils import task_file_to_task_class
+#from rlbench.action_modes.gripper_action_modes import Discrete
+#from rlbench.action_modes.action_mode import MoveArmThenGripper
 from yarr.utils.rollout_generator import RolloutGenerator
 from yarr.utils.stat_accumulator import SimpleAccumulator
 from yarr.utils.log_writer import LogWriter

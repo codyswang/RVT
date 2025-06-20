@@ -1,10 +1,10 @@
 from typing import Type, List
 
 import numpy as np
-from rlbench import ObservationConfig, ActionMode
-from rlbench.backend.exceptions import InvalidActionError
-from rlbench.backend.observation import Observation
-from rlbench.backend.task import Task
+#from rlbench import ObservationConfig, ActionMode
+#from rlbench.backend.exceptions import InvalidActionError
+#from rlbench.backend.observation import Observation
+#from rlbench.backend.task import Task
 from yarr.agents.agent import ActResult, VideoSummary, TextSummary
 from yarr.envs.rlbench_env import RLBenchEnv, MultiTaskRLBenchEnv
 from yarr.utils.observation_type import ObservationElement
@@ -21,7 +21,7 @@ class CustomRLBenchEnv(RLBenchEnv):
 
     def __init__(self,
                  task_class: Type[Task],
-                 observation_config: ObservationConfig,
+                 observation_config, # : ObservationConfig
                  action_mode: ActionMode,
                  episode_length: int,
                  dataset_root: str = '',
@@ -61,7 +61,7 @@ class CustomRLBenchEnv(RLBenchEnv):
                 self.low_dim_state_len = oe.shape[0]
         return obs_elems
 
-    def extract_obs(self, obs: Observation, t=None, prev_action=None):
+    def extract_obs(self, obs, # : Observation t=None, prev_action=None):
         obs.joint_velocities = None
         grip_mat = obs.gripper_matrix
         grip_pose = obs.gripper_pose
@@ -202,7 +202,7 @@ class CustomMultiTaskRLBenchEnv(MultiTaskRLBenchEnv):
 
     def __init__(self,
                  task_classes: List[Type[Task]],
-                 observation_config: ObservationConfig,
+                 observation_config, # : ObservationConfig
                  action_mode: ActionMode,
                  episode_length: int,
                  dataset_root: str = '',
@@ -243,7 +243,7 @@ class CustomMultiTaskRLBenchEnv(MultiTaskRLBenchEnv):
                 self.low_dim_state_len = oe.shape[0]
         return obs_elems
 
-    def extract_obs(self, obs: Observation, t=None, prev_action=None):
+    def extract_obs(self, obs, # : Observation t=None, prev_action=None):
         obs.joint_velocities = None
         grip_mat = obs.gripper_matrix
         grip_pose = obs.gripper_pose

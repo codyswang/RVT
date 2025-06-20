@@ -7,10 +7,10 @@ from typing import List
 
 import numpy as np
 from omegaconf import DictConfig
-from rlbench.backend.observation import Observation
-from rlbench.observation_config import ObservationConfig
+#from rlbench.backend.observation import Observation
+#from rlbench.observation_config import ObservationConfig
 import rlbench.utils as rlbench_utils
-from rlbench.demo import Demo
+#from rlbench.demo import Demo
 from yarr.replay_buffer.prioritized_replay_buffer import \
     PrioritizedReplayBuffer, ObservationElement
 from yarr.replay_buffer.replay_buffer import ReplayElement, ReplayBuffer
@@ -95,8 +95,8 @@ def _add_keypoints_to_replay(
         cfg: DictConfig,
         task: str,
         replay: ReplayBuffer,
-        inital_obs: Observation,
-        demo: Demo,
+        inital_obs, # : Observation
+        demo, # : Demo
         episode_keypoints: List[int],
         cameras: List[str],
         description: str = '',
@@ -145,7 +145,7 @@ def _add_keypoints_to_replay(
 
 
 def fill_replay(cfg: DictConfig,
-                obs_config: ObservationConfig,
+                obs_config, # : ObservationConfig
                 rank: int,
                 replay: ReplayBuffer,
                 task: str,
@@ -204,7 +204,7 @@ def fill_replay(cfg: DictConfig,
 
 
 def fill_multi_task_replay(cfg: DictConfig,
-                           obs_config: ObservationConfig,
+                           obs_config, # : ObservationConfig
                            rank: int,
                            replay: ReplayBuffer,
                            tasks: List[str],

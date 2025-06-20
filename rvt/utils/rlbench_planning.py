@@ -3,7 +3,7 @@
 # Licensed under the NVIDIA Source Code License [see LICENSE for details].
 
 import numpy as np
-from rlbench.action_modes.arm_action_modes import (
+#from rlbench.action_modes.arm_action_modes import (
     EndEffectorPoseViaPlanning,
     Scene,
 )

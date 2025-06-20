@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 from helpers import utils
-from pytorch3d import transforms as torch3d_tf
+#from pytorch3d import transforms as torch3d_tf
 
 
 def perturb_se3(pcd,
