@@ -1,5 +1,9 @@
 exp_id: rvt2
+<<<<<<< HEAD
 tasks: [PickCube-v1]
+=======
+tasks: PickCube-v1
+>>>>>>> 3b1e8a89a7d8f8a01af1eb482769c92955e299ff
 bs: 24
 num_workers: 3
 epochs: 15
