@@ -5,8 +5,8 @@ from typing import List
 import numpy as np
 import torch
 import torch.nn as nn
-from rlbench.backend.observation import Observation
-from rlbench.demo import Demo
+# from rlbench.backend.observation import Observation
+# from rlbench.demo import Demo
 from yarr.replay_buffer.prioritized_replay_buffer import \
     PrioritizedReplayBuffer, ObservationElement
 from yarr.replay_buffer.replay_buffer import ReplayElement, ReplayBuffer

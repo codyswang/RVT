@@ -2,7 +2,7 @@ import logging
 from typing import List
 
 import numpy as np
-from rlbench.demo import Demo
+# from rlbench.demo import Demo
 
 
 def _is_stopped(demo, i, obs, stopped_buffer, delta=0.1):
@@ -18,7 +18,7 @@ def _is_stopped(demo, i, obs, stopped_buffer, delta=0.1):
     return stopped
 
 
-def keypoint_discovery(demo: Demo,
+def keypoint_discovery(demo,
                        stopping_delta=0.1,
                        method='heuristic') -> List[int]:
     episode_keypoints = []

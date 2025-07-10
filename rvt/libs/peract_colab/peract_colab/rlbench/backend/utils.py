@@ -1,5 +1,5 @@
 import numpy as np
-from rlbench.backend.observation import Observation
+# from rlbench.backend.observation import Observation
 
 
 REMOVE_KEYS = ['joint_velocities', 'joint_positions', 'joint_forces',

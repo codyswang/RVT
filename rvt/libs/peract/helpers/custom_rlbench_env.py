@@ -1,19 +1,19 @@
 from typing import Type, List
 
 import numpy as np
-from rlbench import ObservationConfig, ActionMode
-from rlbench.backend.exceptions import InvalidActionError
-from rlbench.backend.observation import Observation
-from rlbench.backend.task import Task
+# from rlbench import ObservationConfig, ActionMode
+# from rlbench.backend.exceptions import InvalidActionError
+# from rlbench.backend.observation import Observation
+# from rlbench.backend.task import Task
 from yarr.agents.agent import ActResult, VideoSummary, TextSummary
 from yarr.envs.rlbench_env import RLBenchEnv, MultiTaskRLBenchEnv
 from yarr.utils.observation_type import ObservationElement
 from yarr.utils.transition import Transition
 from yarr.utils.process_str import change_case
 
-from pyrep.const import RenderMode
-from pyrep.errors import IKError, ConfigurationPathError
-from pyrep.objects import VisionSensor, Dummy
+# from pyrep.const import RenderMode
+# from pyrep.errors import IKError, ConfigurationPathError
+# from pyrep.objects import VisionSensor, Dummy
 
 
 

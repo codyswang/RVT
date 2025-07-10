@@ -7,10 +7,10 @@ from typing import List
 
 import numpy as np
 from omegaconf import DictConfig
-from rlbench.backend.observation import Observation
-from rlbench.observation_config import ObservationConfig
-import rlbench.utils as rlbench_utils
-from rlbench.demo import Demo
+# from rlbench.backend.observation import Observation
+# from rlbench.observation_config import ObservationConfig
+# import rlbench.utils as rlbench_utils
+# from rlbench.demo import Demo
 from yarr.replay_buffer.prioritized_replay_buffer import \
     PrioritizedReplayBuffer, ObservationElement
 from yarr.replay_buffer.replay_buffer import ReplayElement, ReplayBuffer

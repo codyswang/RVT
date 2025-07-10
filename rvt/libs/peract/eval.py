@@ -11,12 +11,12 @@ import numpy as np
 import torch
 import pandas as pd
 from omegaconf import DictConfig, OmegaConf, ListConfig
-from rlbench import CameraConfig, ObservationConfig
-from rlbench.action_modes.action_mode import MoveArmThenGripper
-from rlbench.action_modes.arm_action_modes import EndEffectorPoseViaPlanning
-from rlbench.action_modes.gripper_action_modes import Discrete
-from rlbench.backend import task as rlbench_task
-from rlbench.backend.utils import task_file_to_task_class
+# from rlbench import CameraConfig, ObservationConfig
+# from rlbench.action_modes.action_mode import MoveArmThenGripper
+# from rlbench.action_modes.arm_action_modes import EndEffectorPoseViaPlanning
+# from rlbench.action_modes.gripper_action_modes import Discrete
+# from rlbench.backend import task as rlbench_task
+# from rlbench.backend.utils import task_file_to_task_class
 from yarr.runners.independent_env_runner import IndependentEnvRunner
 from yarr.utils.stat_accumulator import SimpleAccumulator
 

@@ -5,8 +5,8 @@ import pickle
 import numpy as np
 from PIL import Image
 
-from rlbench.backend.utils import image_to_float_array
-from pyrep.objects import VisionSensor
+# from rlbench.backend.utils import image_to_float_array
+# from pyrep.objects import VisionSensor
 
 # constants
 EPISODE_FOLDER = 'episode%d'

@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from omegaconf import DictConfig
 
-from rlbench import CameraConfig, ObservationConfig
+# from rlbench import CameraConfig, ObservationConfig
 from yarr.replay_buffer.wrappers.pytorch_replay_buffer import PyTorchReplayBuffer
 from yarr.runners.offline_train_runner import OfflineTrainRunner
 from yarr.utils.stat_accumulator import SimpleAccumulator
